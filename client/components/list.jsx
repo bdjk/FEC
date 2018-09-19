@@ -1,5 +1,5 @@
 import React from 'react';
-import App from './app.jsx';
+import Carousel from './app.jsx';
 import ListEntry from './listEntry.jsx';
 
 const List = props => (
