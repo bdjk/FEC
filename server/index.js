@@ -3,7 +3,7 @@ const path = require('path');
 const parser = require('body-parser');
 const db = require('../database/index.js');
 const routes = require('./routes.js');
-const PORT = 3000;
+const PORT = 7777;
 
 const app = express();
 
@@ -14,5 +14,5 @@ app.use(express.static(path.resolve(__dirname, '../static')));
 app.use('/api', routes);
 
 app.listen(PORT, () => {
-    console.log("listening on 3000...");
+    console.log("listening on 7777...");
 })
