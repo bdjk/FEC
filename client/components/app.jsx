@@ -23,7 +23,7 @@ class Carousel extends React.Component {
 
     fetchData() {
       axios
-        .get('localhost:3000/api/mydb')
+        .get('api/mydb')
         .then( ({data}) => {
             console.log(data.data);
             this.setState({
@@ -75,14 +75,14 @@ class Carousel extends React.Component {
                 <div className="title">Similar Products</div>
                 <div className="carousel">
                     <div>
-                    <button placeholder="LEFT" className="left-arrow" onClick = {e => this.goToPreviousSlide(e)}></button>
+                    {/* <button placeholder="LEFT" className="left-arrow" ></button> */}
                     </div>
                     <List 
                     items = {this.state.itemList}
                     currentIndex = {this.state.currentIndex}
                     />
                     <div>
-                    <button placeholder="RIGHT" className="right-arrow" onClick = {e => this.goToNextSlide(e)}></button>
+                    {/* <button placeholder="RIGHT" className="right-arrow"></button> */}
                     </div>
                 </div>
             </div>

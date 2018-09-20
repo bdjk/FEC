@@ -1,4 +1,8 @@
 const path = require('path');
+// const ExtractTextWebpackPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+
 
 module.exports = {
   entry: path.resolve(__dirname, './client'),
@@ -16,10 +20,28 @@ module.exports = {
         options: {
           presets: ['react', 'env']
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          "css-loader"
+        ]
       }
+      // {
+      //   test: /\.scss$/,
+      //   : MiniCssExtractPlugin.extract({
+      //     fallback: 'style-loader',
+      //     use: ['css-loader', 'sass-loader']
+      //   })
+      // },
     ]
   },
+  plugins: [new MiniCssExtractPlugin()],
+  
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.css']
   }
 };
