@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import List from './list.jsx';
+import StyledDiv from './style.js';
 // d="M16 0l4.9 10.5L32 12.2l-8 8.2L25.9 32 16 26.5 6.1 32 8 20.4l-8-8.2 11.1-1.7L16 0z"
 
 
@@ -21,13 +22,15 @@ class Carousel extends React.Component {
     this.fetchData();
     }
 
+  
     fetchData() {
       axios
-        .get('api/mydb')
+        .get('http://52.207.209.29:7777/api/mydb')
         .then( ({data}) => {
             console.log(data.data);
             this.setState({
-              itemList: data
+              itemList: data,
+              
             })
         })
         .catch(err => {
@@ -71,6 +74,8 @@ class Carousel extends React.Component {
 
     render() {
         return (
+            <StyledDiv>
+
             <div className="app-container">
                 <div className="title">Similar Products</div>
                 <div className="carousel">
@@ -87,6 +92,7 @@ class Carousel extends React.Component {
                 </div>
             </div>
           
+                    </StyledDiv >
         )
     }
 }

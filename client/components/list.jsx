@@ -34,6 +34,7 @@ class List extends React.Component {
     this.galleryItems = this.galleryItems.bind(this);
   }
 
+
   galleryItems() {
     console.log("PROPS--->", this.props);
     return (this.props.items.map( (item, index) => {
@@ -52,6 +53,7 @@ class List extends React.Component {
       <NukaCarousel 
       slidesToShow = {5}
       slidesToScroll = {5}
+      slideIndex = {0}
       // renderTopCenterControls={({ currentSlide }) => ()}
       renderCenterLeftControls={({ previousSlide }) => (
         <button className="left-arrow" onClick={previousSlide}></button>
@@ -60,10 +62,12 @@ class List extends React.Component {
         <button className="right-arrow" onClick={nextSlide}></button>
       )}
       >
-      {this.props.items.map( (item, index) => {
-      return <ListEntry 
-      item = {item}
-      key = {item.index}
+        {this.props.items.map( (item, index) => {
+          console.log("IM IN THE LIST.JSX RENDER BEFORE RETURN")
+        return <ListEntry 
+        item = {item}
+        slideIndex = {index}
+        key = {item.index}
       />
     })}
   </NukaCarousel>
