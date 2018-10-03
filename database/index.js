@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://mongo:27017/mydb');
+mongoose.connect('mongodb://localhost:27017/mydb');
 
 const db = mongoose.connection;
 
-db.on('error', console.log.bind(console, "<===MONGOOSE ERROR===>"));
+db.on('error', console.log.bind(console, '<===MONGOOSE ERROR===>'));
 db.once('open', () => {
-    console.log("<===MONGOOSE CONNECTED===>");
+  console.log('<===MONGOOSE CONNECTED===>');
+  // db.Item.find({ Index: 30004 });
 });
 
 module.exports = db;

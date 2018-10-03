@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/DavidEngelstad/fullstack-workshop#readme",
   "dependencies": {
+    "artillery": "^1.6.0-24",
     "axios": "^0.18.0",
     "babel": "6.23.0",
     "babel-core": "6.26.3",
@@ -31,13 +32,17 @@
     "css-loader": "^1.0.0",
     "express": "4.16.3",
     "extract": "^1.0.0",
+    "faker": "^4.1.0",
     "flickity": "^2.1.2",
     "loader": "^2.1.1",
     "mini": "^1.1.0",
     "mongodb": "3.1.4",
     "mongoose": "5.2.12",
+    "mongoose-simple-random": "^0.4.1",
     "nodemon": "1.18.4",
     "nuka-carousel": "^4.3.11",
+    "performance-now": "^2.1.0",
+    "pg": "^7.4.3",
     "plugin": "^0.3.3",
     "pure-react-carousel": "^1.13.2",
     "react": "^16.4.2",
@@ -48,15 +53,16 @@
     "sass": "^1.13.4",
     "sass-loader": "^7.1.0",
     "scss": "^0.2.4",
+    "sequelize": "^4.39.0",
     "style": "0.0.3",
     "style-loader": "^0.23.0",
     "styled-components": "^3.4.9",
-    "webpack": "4.17.2",
-    "webpack-command": "0.4.1"
+    "webpack": "4.17.2"
   },
   "devDependencies": {
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "mini-css-extract-plugin": "^0.4.3",
-    "react-alice-carousel": "^1.10.6"
+    "react-alice-carousel": "^1.10.6",
+    "webpack-command": "^0.4.1"
   }
 }

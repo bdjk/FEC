@@ -23,7 +23,7 @@ class Carousel extends React.Component {
 
   fetchData() {
     axios
-      .get('http://52.207.209.29:7777/api/mydb')
+      .get('http://localhost:7777/api/mydb')
       .then(({ data }) => {
         console.log(data.data);
         this.setState({
