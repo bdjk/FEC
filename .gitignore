@@ -1,3 +1,7 @@
 node_modules
 # ./database/data.tsv
 database/data.tsv
+hello.yml
+practice.yml
+database/data2.tsv
+database/psql.js

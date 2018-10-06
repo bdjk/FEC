@@ -2,7 +2,7 @@ const faker = require('faker');
 // const Item = require('./model.js');
 const fs = require('fs');
 const time = require('performance-now');
-const stream = fs.createWriteStream('data.tsv', null, 4);
+const stream = fs.createWriteStream('data2.tsv', null, 4);
 const start = time();
 
 const header = `name\tpicture\tcost\tabout\trating\tindex\n`;
@@ -32,7 +32,7 @@ function writeWayTooManyTimes(stream, i, increment, cb) {
     }
   } while (i % 1000000 !== 0);
 }
-writeWayTooManyTimes(stream, 10000000, 1, () => {
+writeWayTooManyTimes(stream, 1, 1, () => {
   console.log('I guess we are done ');
 });
 // let i = 10000000;
