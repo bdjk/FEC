@@ -7,9 +7,9 @@ const ListEntry = props => {
 
   for (var i = 0; i < 5; i++) {
     if (i <= props.item.rating - 1) {
-      starArray.push(<CheckedStar index={i} />);
+      starArray.push(<CheckedStar index={i} key={'star' + i} />);
     } else {
-      starArray.push(<UncheckedStar index={i} />);
+      starArray.push(<UncheckedStar index={i} key={'star' + i} />);
     }
   }
 
@@ -19,7 +19,7 @@ const ListEntry = props => {
       <div className="list-entry-name">{props.item.name}</div>
       <div className="list-entry-about">{props.item.about}</div>
       <div className="list-entry-cost">{props.item.cost}</div>
-      {starArray.map(star => {
+      {starArray.map((star, index) => {
         return star;
       })}
     </div>

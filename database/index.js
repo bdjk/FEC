@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/mydb');
+mongoose.connect(
+  'mongodb://localhost:27017/mydb',
+  { poolSize: 10 }
+);
 
 const db = mongoose.connection;
 

@@ -7,8 +7,8 @@ module.exports = {
     // console.log(`{ index: ${Math.floor(Math.random() * 10000000)}}`);
     Item.find({ index: Math.floor(Math.random() * 10000000) })
       .then(data => {
-        console.log(data[0].name);
-        Item.find({ picture: data[0].picture })
+        // console.log(data[0].name);
+        Item.find({ type: data[0].type })
           .limit(15)
           .then(data => {
             res.status(200).send(data);
