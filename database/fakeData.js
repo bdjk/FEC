@@ -5,17 +5,17 @@ const time = require('performance-now');
 const stream = fs.createWriteStream('data.tsv', null, 4);
 const start = time();
 /********************EZ Command to batch import through command prompt****************** */
-//mongoimport --db mydb --collection Items  --type tsv --file C:\Users\Drew\Desktop\Repos\Sephora-Project\SDC\FEC\database\data.tsv --fields "name,picture,cost,about,rating,type,index"
+//mongoimport --db mydb --collection Items  --type tsv --file C:\Users\Drew\Desktop\Repos\Sephora-Project\SDC\FEC\database\data.tsv --fields "name,picture,cost,about,rating,category,index"
 /*************************************************************************************** */
-const header = `name\tpicture\tcost\tabout\trating\ttype\tindex\n`;
+const header = `name\tpicture\tcost\tabout\trating\tcategory\tindex\n`;
 function writeWayTooManyTimes(stream, i, increment, cb) {
   do {
     i--;
     let product = faker.commerce.productName();
     let endpoint = product.split(' ');
-    let result = `${product}\thttps://loremflickr.com/386/436/${
-      endpoint[endpoint.length - 1]
-    }\t${faker.finance.amount()}\t${faker.lorem.words()}\t${Math.ceil(
+    let result = `${product}\thttps://picsum.photos/300/300?image=${Math.floor(
+      Math.random() * 1085
+    )}\t${faker.finance.amount()}\t${faker.lorem.words()}\t${Math.ceil(
       Math.random() * 5
     )}\t${endpoint[endpoint.length - 1]}\t${i}\n`;
 
