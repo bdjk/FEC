@@ -13,11 +13,7 @@ function writeWayTooManyTimes(stream, i, increment, cb) {
     i--;
     let product = faker.commerce.productName();
     let endpoint = product.split(' ');
-    let result = `${product}\thttps://picsum.photos/300/300?image=${Math.floor(
-      Math.random() * 1085
-    )}\t${faker.finance.amount()}\t${faker.lorem.words()}\t${Math.ceil(
-      Math.random() * 5
-    )}\t${endpoint[endpoint.length - 1]}\t${i}\n`;
+    let result = `'${endpoint[endpoint.length - 1]}',`;
 
     if (i === 0) {
       stream.write(result, cb());
@@ -26,15 +22,15 @@ function writeWayTooManyTimes(stream, i, increment, cb) {
     } else {
       stream.write(result);
     }
-    if (i % 1000000 === 0 && i !== 0) {
+    if (i % 10 === 0 && i !== 0) {
       console.log('hi from ', i);
       setTimeout(() => {
         writeWayTooManyTimes(stream, i, increment + 0.0001, cb);
       }, increment * 500);
     }
-  } while (i % 1000000 !== 0);
+  } while (i % 100 !== 0);
 }
-writeWayTooManyTimes(stream, 10000000, 1, () => {
+writeWayTooManyTimes(stream, 100, 1, () => {
   console.log('I guess we are done ');
 });
 // let i = 10000000;

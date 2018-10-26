@@ -1,3 +1,4 @@
 node_modules
 database/data.tsv
 database/data2.tsv
+database/fakeData.js
